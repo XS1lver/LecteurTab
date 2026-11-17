@@ -1,31 +1,32 @@
 use crate::note::Note;
+use crate::beat::Beat;
 use crate::signature::Signature;
 
 pub struct Measure{
     id: u8,
-    notes: Vec<Note>,
+    beats: Vec<Beat>,
     sig: Signature
 }
 
 impl Measure{
-    pub fn new(id: u8, notes: Vec<Note>, sig: Signature) -> Self{
-        Self{id, notes, sig}
+    pub fn new(id: u8, beats: Vec<Beat>, sig: Signature) -> Self{
+        Self{id, beats, sig}
     }
 
-    pub fn getId(&self) -> u8{
+    pub fn get_id(&self) -> u8{
         return self.id;
     }
-    pub fn getNotes(&self) -> &[Note]{
-        return &self.notes;
+    pub fn get_beats(&self) -> &[Beat]{
+        return &self.beats;
     }
-    pub fn getSig(&self) -> &Signature{
+    pub fn get_sig(&self) -> &Signature{
         return &self.sig;
     }
 
     pub fn sum_sigs(&self) -> Signature{
         let mut res = Signature::new(0, 1);
-        for note in &self.notes{
-            res.add(note.getTimeSig());
+        for beat in &self.beats{
+            res.add(beat.get_time());
         }
         return res;
     }

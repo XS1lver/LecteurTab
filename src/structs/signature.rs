@@ -8,10 +8,10 @@ impl Signature{
         Self{num, denom}
     }
 
-    pub fn getNum(&self) -> u8{
+    pub fn get_num(&self) -> u8{
         return self.num;
     }
-    pub fn getDenom(&self) -> u8{
+    pub fn get_denom(&self) -> u8{
         return self.denom;
     }
 

@@ -2,29 +2,45 @@
     "name": "Test",
     "measures": [
         {
-            "id": 0,
-            "notes": [
-                {
-                    "string": 0,
-                    "fret": 0,
-                    "time":{
-                        "num": 1,
-                        "denom": 4
-                    }
-                },
-                {
-                    "string": 1,
-                    "fret": 5,
-                    "time":{
-                        "num": 3,
-                        "denom": 4
-                    }
-                }
-        ],
-            "sig": {
-                "num": 4,
-                "denom": 4
-            }
+        	"id": 0,
+	    	"beats":[
+			    {
+				"notes":[
+					{
+						"string": 0,
+						"fret": 0
+					},
+					{
+						"string": 1,
+						"fret": 2
+					}
+				],
+				"time": {
+					"num": 2,
+					"denom": 4
+				}
+			    },
+			    {
+				"notes":[
+					{
+						"string": 0,
+						"fret": 3
+					},
+					{
+						"string": 1,
+						"fret": 5
+					}
+				],
+				"time":{
+					"num": 2,
+					"denom": 4
+				}
+			    }
+        		],
+			"sig": {
+				"num": 4,
+				"denom": 4
+			}
         }
     ],
     "nb_frets": 24,

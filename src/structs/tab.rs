@@ -13,19 +13,19 @@ impl Tab{
         Self{name, measures, nb_frets, nb_strings, tuning}
     }
 
-    pub fn getName(&self) -> &String{
+    pub fn get_name(&self) -> &String{
         return &self.name;
     }
-    pub fn getMeasures(&self) -> &[Measure]{
+    pub fn get_measures(&self) -> &[Measure]{
         return &self.measures;
     }
-    pub fn getNbFrets(&self) -> u8{
+    pub fn get_nb_frets(&self) -> u8{
         return self.nb_frets;
     }
-    pub fn getNbStrings(&self) -> u8{
+    pub fn get_nb_strings(&self) -> u8{
         return self.nb_strings;
     }
-    pub fn getTuning(&self) -> &[String]{
+    pub fn get_tuning(&self) -> &[String]{
         return &self.tuning;
     }
 }
