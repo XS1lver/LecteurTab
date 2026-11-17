@@ -1,3 +1,6 @@
+use serde::Deserialize;
+
+#[derive(Debug, Deserialize)]
 pub struct Signature{
     num: u8,
     denom: u8

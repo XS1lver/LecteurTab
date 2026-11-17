@@ -1,6 +1,8 @@
 use crate::note::Note;
 use crate::signature::Signature;
+use serde::Deserialize;
 
+#[derive(Debug, Deserialize)]
 pub struct Beat{
     notes: Vec<Note>,
     time: Signature

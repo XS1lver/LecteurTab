@@ -1,4 +1,5 @@
 mod structs;
+mod parser;
 
 use structs::tab;
 use structs::signature;

@@ -1,5 +1,7 @@
 use crate::measure::Measure;
+use serde::Deserialize;
 
+#[derive(Debug, Deserialize)]
 pub struct Tab{
     name: String,
     measures: Vec<Measure>,

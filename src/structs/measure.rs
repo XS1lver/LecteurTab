@@ -1,7 +1,9 @@
 use crate::note::Note;
 use crate::beat::Beat;
 use crate::signature::Signature;
+use serde::Deserialize;
 
+#[derive(Debug, Deserialize)]
 pub struct Measure{
     id: u8,
     beats: Vec<Beat>,

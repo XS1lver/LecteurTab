@@ -1,5 +1,7 @@
 use crate::signature::Signature;
+use serde::Deserialize;
 
+#[derive(Debug, Deserialize)]
 pub struct Note{
     string: u8,
     fret: u8,
