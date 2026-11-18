@@ -1,4 +1,3 @@
-use crate::note::Note;
 use crate::beat::Beat;
 use crate::signature::Signature;
 use serde::Deserialize;

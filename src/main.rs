@@ -6,7 +6,10 @@ use structs::signature;
 use structs::note;
 use structs::measure;
 use structs::beat;
+use crate::tab::Tab;
 
 fn main() {
     println!("Hello, world!");
+    let tab: Tab = parser::parse("ressources/test.json");
+    println!("{}",tab.get_name());
 }

@@ -1,4 +1,3 @@
-use crate::signature::Signature;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]

@@ -1,8 +1,7 @@
-use serde::Deserialize;
-use std::error::Error;
-use std::fs;
 use crate::tab::Tab;
+use std::fs::File;
 
 pub fn parse(file: &str) -> Tab{
-    serde_json::from_str(file).unwrap() 
+    let f = File::open(file).expect("Erreur");
+    serde_json::from_reader(f).unwrap() 
 }
