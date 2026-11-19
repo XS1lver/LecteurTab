@@ -4,19 +4,15 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct Measure{
-    id: u8,
     beats: Vec<Beat>,
     sig: Signature
 }
 
 impl Measure{
-    pub fn new(id: u8, beats: Vec<Beat>, sig: Signature) -> Self{
-        Self{id, beats, sig}
+    pub fn new(beats: Vec<Beat>, sig: Signature) -> Self{
+        Self{beats, sig}
     }
 
-    pub fn get_id(&self) -> u8{
-        return self.id;
-    }
     pub fn get_beats(&self) -> &[Beat]{
         return &self.beats;
     }
