@@ -4,38 +4,150 @@
         {
 	    	"beats":[
 			    {
-				"notes":[
-					{
-						"string": 0,
-						"fret": 0
-					},
-					{
-						"string": 1,
-						"fret": 2
+					"notes":[
+						{
+							"string": 0,
+							"fret": 0
+						},
+						{
+							"string": 1,
+							"fret": 2
+						}
+					],
+					"time": {
+						"num": 1,
+						"denom": 2
 					}
-				],
-				"time": {
-					"num": 2,
-					"denom": 4
-				}
 			    },
 			    {
-				"notes":[
-					{
-						"string": 0,
-						"fret": 3
-					},
-					{
-						"string": 1,
-						"fret": 5
+					"notes":[
+						{
+							"string": 0,
+							"fret": 3
+						},
+						{
+							"string": 1,
+							"fret": 5
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 4
 					}
-				],
-				"time":{
-					"num": 2,
-					"denom": 4
+			    },
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 2
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 8
+					}
+				},
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 3
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 16
+					}
+				},
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 5
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 16
+					}
 				}
-			    }
-        		],
+        	],
+			"sig": {
+				"num": 4,
+				"denom": 4
+			}
+        },
+		{
+	    	"beats":[
+			    {
+					"notes":[
+						{
+							"string": 0,
+							"fret": 0
+						},
+						{
+							"string": 1,
+							"fret": 2
+						}
+					],
+					"time": {
+						"num": 1,
+						"denom": 2
+					}
+			    },
+			    {
+					"notes":[
+						{
+							"string": 0,
+							"fret": 3
+						},
+						{
+							"string": 1,
+							"fret": 5
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 4
+					}
+			    },
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 2
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 8
+					}
+				},
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 3
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 16
+					}
+				},
+				{
+					"notes":[
+						{
+							"string": 2,
+							"fret": 5
+						}
+					],
+					"time":{
+						"num": 1,
+						"denom": 16
+					}
+				}
+        	],
 			"sig": {
 				"num": 4,
 				"denom": 4

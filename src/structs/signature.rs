@@ -1,4 +1,5 @@
 use serde::Deserialize;
+use std::cmp::Ordering;
 
 #[derive(Debug, Deserialize)]
 pub struct Signature{
@@ -28,10 +29,23 @@ impl Signature{
         }
     }
 
-    /*pub fn cmp_sigs(&self, a: Signature) -> bool{
-        if a.getNum() == self.num && a.getDenom() == self.denom{
-            return true;
+    pub fn print_duration(&self){
+        print!("\x1b[{}m{}", 36, ""); // Blue color
+        if self.denom == 1 || self.denom == 2{
+            print!("# ");
         }
-        return false;
-    }*/
+        else if self.denom == 4{
+            print!("| ");
+        }
+        else if self.denom == 8{
+            print!("- ");
+        }
+        else if self.denom == 16{
+            print!("= ");
+        }
+        else if self.denom == 32{
+            print!("≡ ");
+        }
+        print!("\x1b[m"); // Return to default color settings
+    }
 }
