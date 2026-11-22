@@ -29,22 +29,11 @@ impl Signature{
     }
 
     pub fn print_duration(&self){
+        const DURATIONS: [&str; 8] = [
+            "𝅝", "𝅗𝅥", "𝅘𝅥", "𝅘𝅥𝅮", "𝅘𝅥𝅯", "𝅘𝅥𝅰", "𝅘𝅥𝅱", "𝅘𝅥𝅲"
+        ];
         print!("\x1b[{}m{}", 36, ""); // Blue color
-        if self.denom == 1 || self.denom == 2{
-            print!("# ");
-        }
-        else if self.denom == 4{
-            print!("| ");
-        }
-        else if self.denom == 8{
-            print!("- ");
-        }
-        else if self.denom == 16{
-            print!("= ");
-        }
-        else if self.denom == 32{
-            print!("≡ ");
-        }
+        print!("{} ", DURATIONS[self.denom.ilog2() as usize]);
         print!("\x1b[m"); // Return to default color settings
     }
 }
