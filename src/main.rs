@@ -11,6 +11,6 @@ use crate::tab::Tab;
 
 fn main() {
     let tab: Tab = parser::parse("ressources/napalm_death.json");
-    println!("Nom: {}",tab.get_name());
+    println!("Nom: {}",tab.name);
     tab.display_tab();
 }

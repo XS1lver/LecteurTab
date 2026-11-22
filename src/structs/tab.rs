@@ -3,35 +3,19 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct Tab{
-    name: String,
-    balance: i8,
-    volume: u8,
-    measures: Vec<Measure>,
-    frets: u8,
-    strings: i8,
-    tuning: Vec<u16>
+    pub name: String,
+    //balance: i8,
+    //volume: u8,
+    pub measures: Vec<Measure>,
+    //frets: u8,
+    pub strings: i8,
+    pub tuning: Vec<u16>
 }
 
 impl Tab{
-    pub fn new(name: String, balance: i8, volume: u8, measures: Vec<Measure>, frets: u8, strings: i8, tuning: Vec<u16>) -> Self{
-        Self{name, balance, volume, measures, frets, strings, tuning}
-    }
-
-    pub fn get_name(&self) -> &String{
-        return &self.name;
-    }
-    pub fn get_measures(&self) -> &[Measure]{
-        return &self.measures;
-    }
-    pub fn get_nb_frets(&self) -> u8{
-        return self.frets;
-    }
-    pub fn get_nb_strings(&self) -> i8{
-        return self.strings;
-    }
-    pub fn get_tuning(&self) -> &[u16]{
-        return &self.tuning;
-    }
+    /*pub fn new(name: String, measures: Vec<Measure>, strings: i8, tuning: Vec<u16>) -> Self{
+        Self{name, measures, strings, tuning}
+    }*/
 
     fn midi_to_tuning(midi: u16){
         const NOTES: [&str; 12] = [
@@ -51,9 +35,9 @@ impl Tab{
     fn display_beats_durations(&self){
         print!("    ");
         for measure in &self.measures{
-            for voice in measure.get_voices(){
-                for beat in voice.get_beats(){
-                    beat.get_duration().print_duration();
+            for voice in &measure.voices{
+                for beat in &voice.beats{
+                    beat.duration.print_duration();
                 }
             }
             print!("  ");
@@ -64,10 +48,10 @@ impl Tab{
     fn display_string(&self, string: i8){
         Self::midi_to_tuning(self.tuning[string as usize]);
         for measure in &self.measures{
-            for voice in measure.get_voices(){
-                for beat in voice.get_beats(){
+            for voice in &measure.voices{
+                for beat in &voice.beats{
                     let mut string_played = false;
-                    for note in beat.get_notes(){
+                    for note in &beat.notes{
                         if note.get_string() == string{
                             print!("{} ", note.get_fret());
                             string_played = true;
