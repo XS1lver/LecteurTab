@@ -10,7 +10,6 @@ use structs::voice;
 use crate::tab::Tab;
 
 fn main() {
-    let tab: Tab = parser::parse("ressources/napalm_death.json");
-    println!("Nom: {}",tab.name);
+    let tab: Tab = parser::parse("ressources/0.json");
     tab.display_tab();
 }
