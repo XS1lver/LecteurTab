@@ -20,16 +20,16 @@ impl Measure{
                 for note in &beat.notes{
                     if note.get_string() == string{
                         if note.get_fret() >= 10{
-                            print!("{}", note.get_fret());
+                            print!("{} ", note.get_fret());
                         }
                         else{
-                            print!("{} ", note.get_fret());
+                            print!("{}  ", note.get_fret());
                         }   
                         string_played = true;
                     }
                 }
                 if !string_played{
-                    print!("  ");
+                    print!("   ");
                 }           
             }
         }

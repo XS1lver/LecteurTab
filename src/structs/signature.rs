@@ -21,12 +21,26 @@ impl Signature{
         }
     }*/
 
-    pub fn print_duration(&self){
-        const DURATIONS: [&str; 8] = [
-            "𝅝", "𝅗𝅥", "𝅘𝅥", "𝅘𝅥𝅮", "𝅘𝅥𝅯", "𝅘𝅥𝅰", "𝅘𝅥𝅱", "𝅘𝅥𝅲"
-        ];
+    pub fn print_duration(&self, dots: i8, rest: bool){
+        let durations: [&str; 8];
+        if rest{
+            durations = [
+                "𝄻", "𝄼", "𝄽", "𝄾", "𝄿", "𝅀", "𝅁", "𝅂"
+             ];
+        }
+        else{
+            durations = [
+                "𝅝", "𝅗𝅥", "𝅘𝅥", "𝅘𝅥𝅮", "𝅘𝅥𝅯", "𝅘𝅥𝅰", "𝅘𝅥𝅱", "𝅘𝅥𝅲"
+            ];
+        }  
+        
         print!("\x1b[{}m{}", 36, ""); // Blue color
-        print!("{} ", DURATIONS[self.denom.ilog2() as usize]);
+        if dots > 0{
+            print!("{}. ", durations[self.denom.ilog2() as usize]);
+        }
+        else{
+            print!("{}  ", durations[self.denom.ilog2() as usize]);
+        }
         print!("\x1b[m"); // Return to default color settings
     }
 }

@@ -30,8 +30,9 @@ impl Tab{
         println!("Nom: {}", &self.name);
         while cpt < self.measures.len(){
             let max: usize;
+            // Print 4 measures per line
             if cpt + 4 > self.measures.len(){
-                max = &self.measures.len() - cpt;
+                max = self.measures.len() - cpt;
             }
             else{
                 max = cpt + 4;
@@ -55,7 +56,7 @@ impl Tab{
             let measure = &self.measures[i as usize];
             for voice in &measure.voices{
                 for beat in &voice.beats{
-                    beat.duration.print_duration();
+                    beat.duration.print_duration(beat.get_dots(), beat.get_rest());
                 }
             }
             print!("  ");
